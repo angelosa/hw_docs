@@ -9,8 +9,9 @@
 |PC-9801-07|SASI board|
 |PC-9801-08|5-inch floppy disk interface board| Connect 640KB floppy to PC-9801 (vanilla?) |
 |PC-9801-09|5-inch floppy disk interface board| Connect 640KB floppy to V30-based HW (as in dip mode too?)|
-|PC-9801-10/-11|?|-10 is a requirement by PC9801E for mounting -18, -10 or -11 by vanilla PC9801|
-|PC-9801-11|?|Can be mounted by vanilla PC9801 for -18|
+|PC-9801-10/-11|Kanji ROM board|-10 is a requirement by PC9801E for mounting -18, -10 or -11 by vanilla PC9801|
+|PC-9801-11|Kanji ROM board|Can be mounted by vanilla PC9801 for -18|
+|PC-9001-12|Kanji lv2 ROM board||
 |PC-9801-13|CMT interface board||
 |PC-9801-14|Music generator board|Runs on TMS3631-R1104, reportedly also mounted on Siel 6/DK600 synth board|
 |PC-9801-15|8-inch standard floppy disk interface board||
