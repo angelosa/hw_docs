@@ -23,7 +23,7 @@ _Update this list if necessary_
 
 ## Per game chip listing
 
-_Confirm following table with latest changes/updates, verify with gh markdown, actually we can add an actual ToC with every chip listed and anchor to that table_
+_Confirm following table with latest changes/updates, verify with gh markdown, actually we can add an actual ToC with every chip listed and anchor tables instead_
 
 | Game Name | board # | Year | CPU | tiles | sprites | priority | palette | other | notes (31st March 2021) |
 |------------|-|-|-|-|-|-|-|-|-|
@@ -80,7 +80,7 @@ Bottom of the Ninth / Main Stadium GX891|1989|6809 052109 051962 051960 051937|P
 Cue Brick|GX903|1989|68000 052109 051962 051960 051937|PROM
 Cue Brick|GX903|1989 2x68000|TWIN16
 Punk Shot|GX907|1990|68000 052109 051962 051960 051937 053251
-Ultraman|GX910|1991|68000 ------ ------ 051960 051937|PROM|051316(x3) (roz) 051550
+Ultraman|GX910|1991|68000|------|------|051960|051937|PROM|051316(x3) (roz) 051550
 Surprise Attack|GX911|1990|053248 052109 051962 053245 053244 053251
 Lightning Fighters / Trigon GX939|1990|68000 052109 051962 053245 053244 053251
 Gradius 3|GX945|1989 2x68000 052109 051962 051960 051937|PROM
@@ -88,7 +88,7 @@ Parodius|GX955|1990|053248 052109 051962 053245 053244 053251
 TMNT|GX963|1989|68000 052109 051962 051960 051937|PROM
 Block Hole / Quarth|GX973|1989|052526 052109 051962 051960 051937|PROM
 Escape Kids|GX975|1991|053248 052109 051962 053247 053246 053251|053252(*)
-Rollergames|GX999|1991|053248 ------ ------ 053245 053244|051316 (roz) 053252(*)
+Rollergames|GX999|1991|053248|------|------|053245|053244|051316 (roz)|053252(*)|
 | Detana!! Twin Bee / Bells & Whistles||GX060|1991|68000 052109 051962 053245 053244 053251|054000 (collision)
 Golfing Greats|GX061|1991|68000 052109 051962 053245 053244 053251|053936 (roz+)
 TMNT 2|GX063|1991|68000 052109 051962 053245 053244 053251|053990 (protection) 051550
@@ -113,20 +113,20 @@ Lethal Enforcers|GX191|1992|HD6309 054157(x2) 054156 053245 053244(x2)|054000 05
 Metamorphic Force|GX224|1993|68000 054157 054157 055673 053246 055555
 Martial Champion|GX234|1993|68000 054157 054156 055673 053246 055555|053252(*) 054338 (alpha blending) 053990 054539 (sound)
 Run and Gun|GX247|1993|68000 (TTL tilemap) 055673 053246|053253(x2) 053252(*) 053936 (roz+) 054539(x2) (sound)
-Quiz Gakumon no|GX248|1993|68000 052109 051962 053245 053244 053251|053990 (protection) 051550 - same board as TMNT2
-|Susume
-Polygonet Commander GX305+1993|68020 (TTL tilemap)|XC56156-40(3D DSP) 054009(x2) 054010(x2) 054539 (sound)
-System GX (ver 1)|GX300|1993|68020 056832 054156 055673 053246 055555|054338 (alpha blending) 054539(x2) (sound) 053252(*) 053936 (optional on ROM board, roz+)
-System GX (ver 2)|GX300|1995|68020 056832 058143 055673 058142 055555|058144 (alpha blending) 058141 (sound) 053252(*) 053936 (optional on ROM board, roz+)
-Beatmania DJ Main|GX858+1996|68020 056832 058143 056766|055555|058144 (alpha blending) 058141 (sound) 053252(*)
-Tail to Nose|*1989|68000|V-System|051316 (roz)
-F-1 Grand Prix|*1991 2x68000|V-System|053936 (roz+)
-F-1 Grand Prix Part II|*1992 2x68000|V-System|053936 (roz+)
-Lethal Crash Race|*1993|68000|V-System|053936 (roz+)
-Super Slams|*1995|68000|V-System|053936 (roz+)
-Blazing Tornado|*1991|68000|Metro|053936 (roz+)
-Dragon Ball Z 2|*1994|68000 054157 054156 053247 053246 053251(x2)|053936(x2) (roz+) 053252(*)
+|Quiz Gakumon no Susume|GX248|1993|68000 052109 051962 053245 053244 053251|053990 (protection) 051550 - same board as TMNT2|
+|Polygonet Commander|GX305|1993|68020 (TTL tilemap)|XC56156-40(3D DSP) 054009(x2) 054010(x2) 054539 (sound)
+|System GX (ver 1)|GX300|1993|68020 056832 054156 055673 053246 055555|054338 (alpha blending) 054539(x2) (sound) 053252(*) 053936 (optional on ROM board, roz+)
+|System GX (ver 2)|GX300|1995|68020|056832 058143 055673 058142 055555|058144 (alpha blending) 058141 (sound) 053252(*) 053936 (optional on ROM board, roz+)
+|Beatmania DJ Main|GX858|1996|68020|056832 058143 056766|055555|058144 (alpha blending) 058141 (sound) 053252(*)
+|Tail to Nose||1989|68000|V-System|051316 (roz)
+|F-1 Grand Prix||1991|2x68000|V-System|053936 (roz+)
+|F-1 Grand Prix Part II||1992|2x68000|V-System|053936 (roz+)
+|Lethal Crash Race||1993|68000|V-System|053936 (roz+)
+|Super Slams||1995|68000|V-System|053936 (roz+)
+|Blazing Tornado||1991|68000|Metro|053936 (roz+)
+|Dragon Ball Z 2||1994|68000|054157 054156 053247 053246 053251(x2)|053936(x2) (roz+) 053252(*)
 
+_Add Picno, Konami Medals, GX type 3/4, post-GX_
 
 Notes:
 
