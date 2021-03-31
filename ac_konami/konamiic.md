@@ -4,7 +4,7 @@ Originally ported from [mamedev/mame/video/konamiic.txt](https://github.com/mame
 
 ## TODO
 
-(update this list)
+_Update this list if necessary_
 
 - It seems shadows can both affect underlying sprites and not. This is currently
   hardcoded in the drivers; there might be a control bit somewhere.
@@ -21,12 +21,9 @@ Originally ported from [mamedev/mame/video/konamiic.txt](https://github.com/mame
 
 - scrollcontrol = 30 in Golfing Greats (leader board)
 
-                      Emulated
-                         |
-                  board #|year    CPU      tiles        sprites  priority palette    other
-                    -----|---- ------- ------------- ------------- ------ ------ ----------------
+## Per game chip listing
 
-(TODO: confirm following table with latest changes/updates, verify with gh markdown, actually we can add an actual ToC with every chip listed and just )
+_Confirm following table with latest changes/updates, verify with gh markdown, actually we can add an actual ToC with every chip listed and anchor to that table_
 
 | Game Name | board # | Year | CPU | tiles | sprites | priority | palette | other | notes (31st March 2021) |
 |------------|-|-|-|-|-|-|-|-|-|
@@ -132,7 +129,8 @@ Dragon Ball Z 2|*1994|68000 054157 054156 053247 053246 053251(x2)|053936(x2) (r
 
 
 Notes:
-* 053252 seems to be just a timing/interrupt controller (see Vendetta schematics).
+
+- 053252 seems to be just a timing/interrupt controller (see Vendetta schematics).
 
 - Old games use 051961 instead of 052109, it is an earlier version functionally
   equivalent (maybe 052109 had bugs fixed). The list always shows 052109 because
@@ -149,9 +147,9 @@ Notes:
   058143 = 054156 (tiles)
   058144 = 054338 (alpha blending)
 
-### Status of the ROM tests in the emulated games 
+## Status of the ROM tests in the emulated games 
 
-(TODO verify with current bleeding edge):
+_Verify with current bleeding edge_
 
 |game name|ROM status|
 |---------|---------:|
@@ -197,7 +195,7 @@ Notes:
 
 
 
-### 005885
+## 005885
 
 (this is currently just implemented in the drivers?)
 
