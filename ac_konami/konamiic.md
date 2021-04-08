@@ -8,12 +8,12 @@ _Update this list if necessary_
 
 - It seems shadows can both affect underlying sprites and not. This is currently
   hardcoded in the drivers; there might be a control bit somewhere.
-  - Games requiring shadows to affect sprites behind them:
+  - Games requiring shadows to affect sprites behind them, also cfr. [MT03644](https://mametesters.org/view.php?id=3644) [MT3814](https://mametesters.org/view.php?id=3814):
     - Surprise Attack (dark glass walls in level 3)
     - 88 Games (angle indicator in the long jump event)
     - Sunset Riders (bull's eye in the saloon cutscene)
     - TMNT 2 (lightbeam in level 4 cave)
-    - Metamorphic Force (double! lightbeam just before the last boss)
+    - Metamorphic Force (double lightbeam just before the last boss)
 
    - Games requiring shadows to NOT affect sprites behind them:
      - Asterix (Asterix's shadow would be over his feet otherwise)
