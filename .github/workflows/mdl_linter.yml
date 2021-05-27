@@ -26,4 +26,4 @@ jobs:
     - name: Run Markdownlint
       run: |
         npm i -g markdownlint-cli
-        markdownlint . -c markdownlint.json
+        markdownlint . -c md_config.json
