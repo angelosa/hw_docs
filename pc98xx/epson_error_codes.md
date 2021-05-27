@@ -1,6 +1,8 @@
 # Epson PC-* error codes
 
-Epson PC-98 clones returns a specific set of errors 
+Epson PC-98 clones returns a specific set of errors
+
+At current stage it is unknown if these also applies to N5200/APC III business class machines.
 
 (kudos to [DFJustin](https://github.com/DopefishJustin) for translating these)
 
@@ -29,4 +31,4 @@ Epson PC-98 clones returns a specific set of errors
 
 ## References
 
-- https://98epjunk.shakunage.net/miscel/ep_errors.html
+- [エプソン98互換機の自動チェック機能によるエラーメッセージ](https://98epjunk.shakunage.net/miscel/ep_errors.html)
