@@ -4,7 +4,7 @@
 |------|-------------------|------------------|
 |PC-9801-01|lv1 Kanji ROM board||
 |PC-9801-04|Universal board|DIY PCB board|
-|PC-9801-05|ODA interface board|?|
+|PC-9801-05|ODA interface board|N5200 specific, printer connection|
 |PC-9801-06|GP-IB (IEEE-488) Interface Board||
 |PC-9801-07|SASI board|
 |PC-9801-08|5-inch floppy disk interface board| Connect 640KB floppy to PC-9801 (vanilla?) |
@@ -77,3 +77,5 @@
 * [PC-9800シリーズ : definition of PC-9800シリーズ and synonyms of PC-9800シリーズ (Japanese)](http://dictionary.sensagent.com/PC-9800シリーズ/ja-ja/)
 
 * [中古PC98 拡張ボード パーツ販売](http://classic.pasocomclub.co.jp/list/pc98_assem.html)
+
+* [モデルナンバー （周辺機器／ソフトウェア） - PC-9800 - NEC - レトロＰＣ - Retro Computer People](https://retrocomputerpeople.web.fc2.com/machines/nec/9801/mdl98others.html)
