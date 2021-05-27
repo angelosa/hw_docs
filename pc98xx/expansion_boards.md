@@ -72,8 +72,8 @@
 
 ## References
 
-* http://pc88pc98.web.fc2.com/pc-9801etc/
+* [PC-9800シリーズ拡張機器](http://pc88pc98.web.fc2.com/pc-9801etc/)
 
-* http://dictionary.sensagent.com/PC-9800シリーズ/ja-ja/
+* [PC-9800シリーズ : definition of PC-9800シリーズ and synonyms of PC-9800シリーズ (Japanese)](http://dictionary.sensagent.com/PC-9800シリーズ/ja-ja/)
 
-* http://classic.pasocomclub.co.jp/list/pc98_assem.html
+* [中古PC98 拡張ボード パーツ販売](http://classic.pasocomclub.co.jp/list/pc98_assem.html)

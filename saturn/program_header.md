@@ -1,12 +1,12 @@
 # Saturn/ST-V header info
 
-On Saturn SW header is located at (<fill me>)
+On Saturn SW header is located in a root file (TODO: fill me)
 
 On a ST-V cart SW header is located in the first 0x100 bytes in head of ic13 if available (interleaved) and first ROM if lies at 0x200000 of relative address.
 
 ## Format
 
-From 0x00 to 0xbf all values are in ASCII, empty values are padded with 0x20 (empty space). 
+From 0x00 to 0xbf all values are in ASCII, empty values are padded with 0x20 (empty space).
 
 | rel location | description | typical values |
 |--------------|-------------|----------------|
@@ -15,7 +15,9 @@ From 0x00 to 0xbf all values are in ASCII, empty values are padded with 0x20 (em
 |0x20-0x29|Product ID, unused on STV?||
 |0x2a-0x2f|Version number prefixed with a V|_V1.005_|
 |0x30-0x37|Release date, in **%Y%m%d** format|_19950623_|
-|0x38-0x3f|"Device invoice"<br/>On STV carts: "CART-A" for (A)lone only cart, "CART-AM" for (A)lone + (M)ulti cart.<br/>On Sports Fishing 2 (STV CD): "CD-1/1 C" |_CART-AM_|
+|0x38-0x3f|"Device invoice"|_CART-AM_|
+||On STV carts: "CART-A" for (A)lone only cart, "CART-AM" for (A)lone + (M)ulti cart.||
+||On Sports Fishing 2 (STV CD): "CD-1/1 C" ||
 |0x40-0x49|Compatible area support: (J)apan, (U)sa & Canada, (E)urope, (T)aiwan & Philippines, (B)razil, (K)orea, (L)atin America, (A)sia PAL|_JUE_|
 |0x4a-0x4f|Backup RAM info, unused on STV?||
 |0x50-0x5f|"Reserved", Unused?||
@@ -35,7 +37,7 @@ Other address in the 0xc0-0xff range are sometimes used, unknown purpose (TODO: 
 
 Titles are displayed at POST for STV, routed by BIOS region.
 
-If game is unsupported by the given region then last available game title is displayed with an **OPERATION OF THIS CARTRIDGE IS DISALLOWED IN THIS COUNTRY** message. 
+If game is unsupported by the given region then last available game title is displayed with an **OPERATION OF THIS CARTRIDGE IS DISALLOWED IN THIS COUNTRY** message.
 
 If game doesn't support Multi cart mode and BIOS is set to such then an **OPERATION OF THIS CARTRIDGE IS UNAVAILABLE WITH "MULTI-CART" mode** displays (and game test mode cannot be accessed).
 
