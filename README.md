@@ -1,12 +1,8 @@
 # hw_docs
 
-Documentation notes for miscellaneous Retro HWs
+Documentation notes for miscellaneous Retro HWs.
 
 This work is licensed under a
-[Creative Commons Attribution 4.0 International License][cc-by].
-[![CC BY 4.0][cc-by-shield]][cc-by]
+[![License: CC0-1.0](https://img.shields.io/badge/License-CC0_1.0-lightgrey.svg)](http://creativecommons.org/publicdomain/zero/1.0/)
 
 Listed HWs are All Rights Reserved to their respective owners.
-
-[cc-by]: http://creativecommons.org/licenses/by/4.0/
-[cc-by-shield]: https://img.shields.io/badge/License-CC%20BY%204.0-lightgrey.svg
