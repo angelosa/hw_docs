@@ -1,0 +1,9 @@
+{
+	"scripts": {
+		"md:lint": "markdownlint . -c md_config.json"
+	},
+	"dependencies": {
+		"markdownlint": "^0.29.0",
+		"markdownlint-cli": "^0.35.0"
+	}
+}
