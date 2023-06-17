@@ -45,7 +45,7 @@
 |PC-9801-64|387SX coprocessor||
 |PC-9801-65|387DX-16 coprocessor||
 |PC-9801-66|i387SL coprocessor||
-|PC-9801-73|FM sound board|YM2608B + μPD65051GFE77 (DSP) + μPD6380GC|
+|PC-9801-73|FM sound board|YM2608B + μPD65051GFE77 (DSP) + μPD6380GC (default on PC-98GS)|
 |PC-9801-81|?|10BASE-5 ethernet|
 |PC-9801-84|B4680 Interface ET|10BASE-5/T ethernet|
 |PC-9801-86|FM sound board|YM2608B (default on PC9821)|
