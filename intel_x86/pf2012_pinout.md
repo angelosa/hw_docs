@@ -16,8 +16,8 @@
 | Video GREEN | N | 12 | Video RED |
 | Video SYNC | P | 13 | Video BLUE |
 | Service Switch | R | 14 | Video GND |
-| Tilt Switch | S | 15 | |
-| Coin Switch 2 | T | 16 | |
+| Tilt Switch | S | 15 | Test Switch |
+| Coin Switch 2 | T | 16 | Coin Switch |
 | P2 start | U | 17 | P1 start |
 | P2 #1 Up | V | 18 | P1 #1 Up |
 | P2 #2 Down | W | 19 | P1 #2 Down |
