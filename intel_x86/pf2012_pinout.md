@@ -18,7 +18,7 @@
 | Service Switch | R | 14 | Video GND |
 | Tilt Switch | S | 15 | Test Switch |
 | Coin Switch 2 | T | 16 | Coin Switch |
-| P2 start | U | 17 | P1 start |
+| P2 Start | U | 17 | P1 Start |
 | P2 #1 Up | V | 18 | P1 #1 Up |
 | P2 #2 Down | W | 19 | P1 #2 Down |
 | P2 #3 Left | X | 20 | P1 #3 Left |
