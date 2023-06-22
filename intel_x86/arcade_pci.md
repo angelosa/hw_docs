@@ -1,6 +1,6 @@
 # List of Arcade games using PCI
 
-- Last update 21st June 2023
+- Last update 22nd June 2023
 
 - MAME driver refers to the current filename as found from [MAME drivers directory](https://github.com/mamedev/mame/tree/master/src/mame)
 
