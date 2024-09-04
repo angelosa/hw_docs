@@ -17,4 +17,3 @@
 | sonevil | 0x00 -> 0x80  | _frc not set_ | _irq 3 `rte`_ |
 | speedyd | 0x80 on company logo, 0xa0 on intro, 0x80 otherwise | 0xa0d6 -> 0xa200 0x13a | _the only place that irq 3 matters is on logo ..._ |
 | staiwbbl | 0xc0 | _frc ???_ | _irq 3 `rte`, irq 6 to a `jsr` -> `rts` |
-
