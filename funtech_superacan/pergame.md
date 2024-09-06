@@ -2,7 +2,7 @@
 
 ## UM6618 (video)
 
-### $f001f0
+#### `$f001f0`
 
 ```
 ---x x--- P[ixel?] MODE
@@ -18,8 +18,8 @@
 ---- -100 8bpp + linescroll-2bpp or 1bpp + linescroll
 ---- -1xx <reserved>
 ```
-
-#### Per game
+|
+Game observations:
 
 | romset ID | `$f001f0` | notes |
 | --- | --- | --- |
@@ -48,11 +48,12 @@ $f00140-$f0015f layer 3
 
 $f00160-$f0017f layer 4
 
-```
+```c++
 [$+000]
--xx- ---- ---- ---- priority
+xxx- ---- ---- ---- priority
+                    \- on collisions higher number layer wins over lower. (speedyd, formduel, magipool)
 ---- xxx- ---- ---- tilemap page size (unknown values)
----- ---x ---- ---- 16x16 if set, otherwise 8x8
+---- ---x ---- ---- 16x16 tiles if set, otherwise 8x8
 ---- ---- x--- ---- 1bpp mode
 ---- ---- -x-- ---- color mix?
 ---- ---- --x- ---- wraparound?
@@ -61,7 +62,7 @@ $f00160-$f0017f layer 4
 ---- ---- ---- ---x global y flip
 ```
 
-```
+```c++
 [$+002]
 -x-- ---- ---- ---- enable X linescroll
 --x- ---- ---- ---- enable Y linescroll
@@ -70,31 +71,31 @@ $f00160-$f0017f layer 4
 ---- ---x ---- ---- <more unknown linescroll setting> (speedyd layer 2)
 ```
 
-```
+```c++
 [$+004] scroll X & 0x7ff
 ```
 
-```
+```c++
 [$+006] scroll Y & 0x7ff
 ```
 
-```
+```c++
 [$+008] base tilemap pointer, << 5
 ```
 
-```
+```c++
 [$+00a] base tile pointer, (value & 0xf800) << 13
 ```
 
-```
+```c++
 [$+00c] X linescroll table, << 2
 ```
 
-```
+```c++
 [+$00e] Y linescroll table?, << 2
 ```
 
-```
+```c++
 [+$010] unknown Y table, applies to layer 1 only, (value & 0xffe0) << 7
 ```
 
@@ -106,11 +107,41 @@ TODO: fill me
 
 TODO: fill me
 
+### Window Control
+
+$f001d0 window 1
+
+$f001d8 window 2
+
+TODO: fill me
+
+### Video Control
+
+$f00008
+
+```c++
+-x-- ---- ---- ---- <unknown>
+--x- ---- ---- ---- <unknown>
+---x ---- ---- ---- 4bpp/8bpp color mixing select
+---- x--- ---- ---- interlace
+---- -x-- ---- ---- global double height
+---- --x- ---- ---- overscan enable (0=240, 1=224)
+---- ---x ---- ---- h320 mode, else 256
+---- ---- x--- ---- enable layer 1
+---- ---- -x-- ---- enable layer 2
+---- ---- --x- ---- enable layer 3
+---- ---- ---x ---- enable layer 4
+---- ---- ---- x--- enable sprites
+---- ---- ---- -x-- enable ROZ
+---- ---- ---- --x- enable window for layer 1
+---- ---- ---- ---x enable window for layer 2
+```
+
 ## UM6619 (sound + system control)
 
 ### IRQ control
 
-#### Main irqs:
+#### Main irqs
 
 1. expansion irq
 2. cart irq
@@ -120,9 +151,11 @@ TODO: fill me
 6. UM6619 from sound to main
 7. UM6618 vertical retrace
 
-#### Sound irqs:
+#### Sound irqs
 
 - NMI UM6618 vertical retrace
+
+1. _unconnected_
 2. "mouse move" DE-9 port 1
 3. "mouse move" DE-9 port 2
 4. from UM6619 PCRD signal, with 1->0 transitions (sample end?)
@@ -130,9 +163,7 @@ TODO: fill me
 6. internal sound CYCLE END
 7. internal sound timer
 
-#### Per game
-
-_TODO:
+Game observations:
 
 | romset ID | irq_mask `$e90010` | frc control/freq `$e90014` / `$e90016` | irq notes |
 | --- | --- | --- | --- |
