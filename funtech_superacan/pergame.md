@@ -2,9 +2,9 @@
 
 ## UM6618 (video)
 
-#### `$f001f0`
+### `$f001f0`
 
-```
+```c++
 ---x x--- P[ixel?] MODE
 ---0 0--- tile mode
 ---0 1--- bitmap mode
