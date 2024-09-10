@@ -88,7 +88,7 @@ $f00160-$f0017f layer 4
 
 [+$00e] Y linescroll table?, << 2
 
-[+$010] unknown Y table, applies to layer 1 only, (value & 0xffe0) << 7
+[+$010] unknown Y table, applies to layer 1 only, lineselect?, (value & 0xffe0) << 7
 ```
 
 ### ROZ
@@ -141,7 +141,7 @@ $f00008
 ```c++
 -x-- ---- ---- ---- <unknown>
 --x- ---- ---- ---- <unknown>
----x ---- ---- ---- 4bpp/8bpp color mixing select
+---x ---- ---- ---- 4bpp/8bpp color mix select
 ---- x--- ---- ---- interlace
 ---- -x-- ---- ---- global double height
 ---- --x- ---- ---- overscan enable (0=240, 1=224)
@@ -167,7 +167,7 @@ $f001d8 window 2
 ?xx- ---- ---- ---- priority? TODO: condition with layer collisions
 ---- x--- ---- ---- Reverse meaning?
 ---- -x-- ---- ---- color mix?
----- ---x ---- ---- ???
+---- ---x ---- ---- Applies line table if enabled, otherwise just one entry for all (sangofgt, see below)
 ---- ---- xxxx xxxx color code
 
 [+002] Table pointer, value << 2
@@ -187,9 +187,15 @@ Following assumes that `$f00008` & 0x3 == 2, TBD 1 and especially 3.
 | romset ID | `$f001d0` | table contents | notes |
 | --- | --- | --- | --- |
 | A'Can BIOS | 0x6802 | all zeroes | Wants 0x02 for the bg pen fill |
+| boomzoo | 0x29af | strips of 0-0 intermixed with 0x0-0x0xff | Intro, clips wolf sprite on bottom |
+| formduel | 0x090f | variable table | used on title screen for a circular clip |
+| magipool | 0x89f0 | variable table | pre-title screen, circular clip |
+| magipool | 0x01f8 | 0-0x141 | actual title screen, uses scroll registers to "fake" white opacity |
+| sangofgt | 0x0805 | one entry, variable thru irq 4 | Used as an horizontal curtain effect |
+| slghtsag | 0x0901 | variable table | On map screen, for a circular clip |
+| speedyd | 0x01ff | strips of 0-0x140 intermixed with 0x0-0x0 | Intro, clips sprite clouds on top |
 
 TODO: add other game samples
-
 
 ## UM6619 (sound + system control)
 
@@ -212,7 +218,7 @@ TODO: add other game samples
 1. _unconnected_
 2. "mouse move" DE-9 port 1
 3. "mouse move" DE-9 port 2
-4. from UM6619 PCRD signal, with 1->0 transitions (sample end?)
+4. from UM6619 PCRD signal, with 1->0 transitions (sample end on repeats?)
 5. from 68k data timer
 6. internal sound CYCLE END
 7. internal sound timer
