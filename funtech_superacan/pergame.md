@@ -12,13 +12,13 @@
 ---1 x--- <not defined>
 ---- -xxx GFX mode
 ---- -000 2bpp-2bpp-2bpp-2bpp (1bpp selectable for all)
----- -001 4bpp-4bpp-2bpp (1bpp selectable for layer 2)
+---- -001 4bpp-4bpp-2bpp (1bpp selectable for layer 3)
 ---- -010 8bpp-4bpp
----- -011 4bpp + linescroll-4bpp + linescroll-1bpp
----- -100 8bpp + linescroll-2bpp or 1bpp + linescroll
+---- -011 (4bpp + linescroll)-(4bpp + linescroll)-1bpp
+---- -100 (8bpp + linescroll)-(2bpp or 1bpp + linescroll)
 ---- -1xx <reserved>
 ```
-|
+
 Game observations:
 
 | romset ID | `$f001f0` | notes |
@@ -30,7 +30,7 @@ Game observations:
 | jttlaugh | 0x01 | |
 | magipool | 0x01 | |
 | monopoly | 0x01 | |
-| sangofgt | 0x03 | linescroll particularly during gameplay |
+| sangofgt | 0x03 | linescroll, particularly during gameplay |
 | slghtsag | 0x04 | |
 | sonevil | 0x01 during attract, 0x09 on new game intro | |
 | speedyd | 0x01 | |
@@ -50,9 +50,17 @@ $f00160-$f0017f layer 4
 
 ```c++
 [$+000]
-xxx- ---- ---- ---- priority
+?xx- ---- ---- ---- priority
                     \- on collisions higher number layer wins over lower. (speedyd, formduel, magipool)
----- xxx- ---- ---- tilemap page size (unknown values)
+---- xxx- ---- ---- tilemap page size
+---- 000- ---- ---- 64x64
+---- 001- ---- ---- 128x128
+---- 010- ---- ---- 256x256
+---- 011- ---- ---- 512x256
+---- 100- ---- ---- 256x512
+---- 101- ---- ---- 1024x256
+---- 110- ---- ---- 512x512
+---- 111- ---- ---- 256x1024
 ---- ---x ---- ---- 16x16 tiles if set, otherwise 8x8
 ---- ---- x--- ---- 1bpp mode
 ---- ---- -x-- ---- color mix?
@@ -60,42 +68,26 @@ xxx- ---- ---- ---- priority
 ---- ---- ---x xx-- mosaic
 ---- ---- ---- --x- global x flip (formduel)
 ---- ---- ---- ---x global y flip
-```
 
-```c++
 [$+002]
 -x-- ---- ---- ---- enable X linescroll
 --x- ---- ---- ---- enable Y linescroll
 ---- xx-- ---- ---- <settings for linescroll, unknown purpose>
----- --x- ---- ---- per-tile priority for bit 15 (speedyd)
+---- --x- ---- ---- per-tile priority for bit 15 (speedyd / sonevil)
 ---- ---x ---- ---- <more unknown linescroll setting> (speedyd layer 2)
-```
 
-```c++
-[$+004] scroll X & 0x7ff
-```
+[$+004] scroll X & 0xfff, signed
 
-```c++
-[$+006] scroll Y & 0x7ff
-```
+[$+006] scroll Y & 0xfff, signed
 
-```c++
 [$+008] base tilemap pointer, << 5
-```
 
-```c++
 [$+00a] base tile pointer, (value & 0xf800) << 13
-```
 
-```c++
 [$+00c] X linescroll table, << 2
-```
 
-```c++
 [+$00e] Y linescroll table?, << 2
-```
 
-```c++
 [+$010] unknown Y table, applies to layer 1 only, (value & 0xffe0) << 7
 ```
 
@@ -105,15 +97,42 @@ TODO: fill me
 
 ### Sprites
 
-TODO: fill me
+$f00020-$f00027
 
-### Window Control
+```c++
+[$020] sprite base address, (value & 0xfc00) << 2
+[$022] sprite count, (value & 0x1ff) + 1
+[$024] sprite monochrome color, (value & 0xff)
+[$026]
+---- ---- ---- ---x 8bpp/4bpp color depth
+```
 
-$f001d0 window 1
+Sprite blocks are in 4 words units.
 
-$f001d8 window 2
+```c++
+[+$000]
+xxx- ---- ---- ---- sprite vertical zoom factor
+010- ---- ---- ---- normal size (0x10000)
+---x xxxx ---- ---- Y tile size
+---- ---- xxxx xxxx Y position
 
-TODO: fill me
+[+$002]
+xxx- ---- ---- ---- Tile bank
+---- x--- ---- ---- flip X
+---- -x-- ---- ---- flip Y
+---- --x- ---- ---- 1bpp select?
+---- ---x ---- ---- color mix?
+---- ---- --xx x--- ???
+---- ---- ---- -xxx X tile size
+
+[+$004]
+xxxx x--- ---- ---- sprite horizontal zoom factor
+---- -xx- ---- ---- priority
+---- ---x xxxx xxxx X position
+
+[+$006]
+xxxx xxxx xxxx xxxx sprite pointer block
+```
 
 ### Video Control
 
@@ -133,9 +152,44 @@ $f00008
 ---- ---- ---x ---- enable layer 4
 ---- ---- ---- x--- enable sprites
 ---- ---- ---- -x-- enable ROZ
----- ---- ---- --x- enable window for layer 1
+---- ---- ---- --x- enable window for layer 1 (see below)
 ---- ---- ---- ---x enable window for layer 2
 ```
+
+### Window/Clipping Control
+
+$f001d0 window 1
+
+$f001d8 window 2
+
+```c++
+[+$000]
+?xx- ---- ---- ---- priority? TODO: condition with layer collisions
+---- x--- ---- ---- Reverse meaning?
+---- -x-- ---- ---- color mix?
+---- ---x ---- ---- ???
+---- ---- xxxx xxxx color code
+
+[+002] Table pointer, value << 2
+Interleaves X start and end positions, word units & 0x1ff
+
+[+004] Base X position, (value & 0x3ff) << 2
+
+[+006] Base Y position, (value & 0x3ff) << 2
+```
+
+Clipping applies per-layer, thru `$f00008` bits 1 and 0.
+In normal conditions the color code fills layer pixels if condition arises, essentially acting as
+an opaque flag.
+
+Following assumes that `$f00008` & 0x3 == 2, TBD 1 and especially 3.
+
+| romset ID | `$f001d0` | table contents | notes |
+| --- | --- | --- | --- |
+| A'Can BIOS | 0x6802 | all zeroes | Wants 0x02 for the bg pen fill |
+
+TODO: add other game samples
+
 
 ## UM6619 (sound + system control)
 
