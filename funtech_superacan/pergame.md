@@ -106,7 +106,7 @@ x--- ---- ---- ---- override with per-tile priority if setting enabled (will lim
 
 $f00180-$f0019f
 
-```
+```c++
 [$180]
 ^^^^ ^^^^ ^^^^ -^^^ ^^-- same as regular layers (priority, tile paging etc.)
 ---- ---- ---- x--- ---- <ignored>
