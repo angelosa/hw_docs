@@ -64,16 +64,17 @@ $f00160-$f0017f layer 4
 ---- ---x ---- ---- 16x16 tiles if set, otherwise 8x8
 ---- ---- x--- ---- 1bpp mode
 ---- ---- -x-- ---- color mix?
----- ---- --x- ---- wraparound?
+---- ---- --x- ---- wraparound tilemap if enabled
 ---- ---- ---x xx-- mosaic
 ---- ---- ---- --x- global x flip (formduel)
 ---- ---- ---- ---x global y flip
 
 [$+002]
--x-- ---- ---- ---- enable X linescroll
---x- ---- ---- ---- enable Y linescroll
----- xx-- ---- ---- <settings for linescroll, unknown purpose>
----- --x- ---- ---- per-tile priority for bit 15 (speedyd / sonevil)
+-x-- ---- ---- ---- enable per-X scroll
+--x- ---- ---- ---- enable per-Y scroll
+---- x--- ---- ---- Line Y Select enable
+---- -x-- ---- ---- <settings for linescroll, unknown purpose>
+---- --x- ---- ---- per-tile priority thru bit 15 (speedyd / sonevil)
 ---- ---x ---- ---- <more unknown linescroll setting> (speedyd layer 2)
 
 [$+004] scroll X & 0xfff, signed
@@ -84,20 +85,91 @@ $f00160-$f0017f layer 4
 
 [$+00a] base tile pointer, (value & 0xf800) << 13
 
-[$+00c] X linescroll table, << 2
+[$+00c] per line X scroll table, << 2
 
-[+$00e] Y linescroll table?, << 2
+[+$00e] line select table, << 2
 
-[+$010] unknown Y table, applies to layer 1 only, lineselect?, (value & 0xffe0) << 7
+[+$010] per line Y scroll table (presumably), applies to layer 1 only, (value & 0xffe0) << 7
+```
+
+Tile format is (mostly) identical for these, for ROZ and for sprites tables.
+
+```c++
+xxxx ---- ---- ---- palette base color
+x--- ---- ---- ---- override with per-tile priority if setting enabled (will limit palette uses to $8-$f entries)
+---- x--- ---- ---- flip X
+---- -x-- ---- ---- flip Y
+---- --xx xxxx xxxx tile entry
 ```
 
 ### ROZ
 
-TODO: fill me
+$f00180-$f0019f
+
+```
+[$180]
+^^^^ ^^^^ ^^^^ -^^^ ^^-- same as regular layers (priority, tile paging etc.)
+---- ---- ---- x--- ---- <ignored>
+---- ---- ---- ---- --xx Select Color Mode
+---- ---- ---- ---- --00 1bpp
+---- ---- ---- ---- --01 2bpp
+---- ---- ---- ---- --10 4bpp
+---- ---- ---- ---- --11 8bpp
+
+[$182] (note: different than above)
+x--- ---- ---- ---- enable Y lineselect
+-x-- ---- ---- ---- enable per-X scroll
+---x ---- ---- ---- <unknown X related setting>
+---- -x-- ---- ---- Line Y Select enable (note: different bit here)
+---- --x- ---- ---- per-tile priority thru bit 15
+---- ---x ---- ---- <unknown linescroll setting>
+---- ---- -x-- ---- X select setting
+---- ---- -0-- ---- use $18c base
+---- ---- -1-- ---- use $198 per-line base
+---- ---- ---x ---- Y select setting
+---- ---- ---0 ---- use $190 base
+---- ---- ---1 ---- use $19c per-line base
+---- ---- ---- xxxx bitmap mode palette base
+
+[$184]-[$186]
+---- ---- xxxx xxxx
+xxxx xxxx xxxx xxxx scroll X & 0xffffff, signed
+
+[$188]-[$18a]
+---- ---- xxxx xxxx
+xxxx xxxx xxxx xxxx scroll Y & 0xffffff, signed
+
+[$18c] incxx
+
+[$18e] incyx
+
+[$190] incyy
+
+[$192] incxy
+
+[$194] base tilemap pointer, << 5
+
+[$196] base tile pointer, (value & 0xff80) << 9
+
+[$198] X select thru [$182] bit 6, << 2
+
+[$19a] per-line X base, << 2
+
+[$19c] Y select thru [$182] bit 4, << 10
+
+[$19e] line select table, << 2
+
+```
+
+TODO: examples here
 
 ### Sprites
 
 $f00020-$f00027
+
+32 sprites per scanline
+
+320 sprites max per frame
 
 ```c++
 [$020] sprite base address, (value & 0xfc00) << 2
@@ -152,8 +224,8 @@ $f00008
 ---- ---- ---x ---- enable layer 4
 ---- ---- ---- x--- enable sprites
 ---- ---- ---- -x-- enable ROZ
----- ---- ---- --x- enable window for layer 1 (see below)
----- ---- ---- ---x enable window for layer 2
+---- ---- ---- --x- enable window clip layer 1
+---- ---- ---- ---x enable window clip layer 2
 ```
 
 ### Window/Clipping Control
@@ -182,7 +254,7 @@ Clipping applies per-layer, thru `$f00008` bits 1 and 0.
 In normal conditions the color code fills layer pixels if condition arises, essentially acting as
 an opaque flag.
 
-Following assumes that `$f00008` & 0x3 == 2, TBD 1 and especially 3.
+Following assumes that `$f00008` & 0x3 == 2, TBD 1 and especially 3 (both unused by any available SW).
 
 | romset ID | `$f001d0` | table contents | notes |
 | --- | --- | --- | --- |
@@ -194,8 +266,6 @@ Following assumes that `$f00008` & 0x3 == 2, TBD 1 and especially 3.
 | sangofgt | 0x0805 | one entry, variable thru irq 4 | Used as an horizontal curtain effect |
 | slghtsag | 0x0901 | variable table | On map screen, for a circular clip |
 | speedyd | 0x01ff | strips of 0-0x140 intermixed with 0x0-0x0 | Intro, clips sprite clouds on top |
-
-TODO: add other game samples
 
 ## UM6619 (sound + system control)
 
