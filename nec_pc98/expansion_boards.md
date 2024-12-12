@@ -1,5 +1,7 @@
 # PC-98 Expansion Boards
 
+## NEC official boards
+
 | name | short description | additional notes |
 |------|-------------------|------------------|
 |PC-9801-01|lv1 Kanji ROM board||
@@ -49,6 +51,7 @@
 |PC-9801-81|?|10BASE-5 ethernet|
 |PC-9801-84|B4680 Interface ET|10BASE-5/T ethernet|
 |PC-9801-86|FM sound board|YM2608B (default on PC9821)|
+|PC-9801-90|TV Tuner|PnP On-board for PC-9821CU10, Windows driver aliased with PC-9821A-E08|
 |PC-9801-91|Full Color Window Accelerator B|?|
 |PC-9801-92|SCSI host adapter||
 |PC-9801-98|Easy keyboard||
