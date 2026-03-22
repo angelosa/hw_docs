@@ -1,6 +1,6 @@
 # List of Arcade games using PCI
 
-- Last update 19th March 2026
+- Last update 22nd March 2026
 
 - MAME driver refers to the current filename as found from [MAME drivers directory](https://github.com/mamedev/mame/tree/master/src/mame)
 
@@ -35,7 +35,7 @@
 |[misc/gfamily.cpp](https://github.com/mamedev/mame/blob/master/src/mame/misc/gfamily.cpp) | Intel Pentium 4 | ? | SiS651 | SiS962 | _Probably just integrated SiS GUI_ | _C-Media 3D Audio, unknown type_ \ Realtek/Avance Logic ALC201A AC'97 | Atmel AT89C2051 \ Microchip PIC12F508 \ Altera Max CPLD |
 |[misc/globalvr.cpp](https://github.com/mamedev/mame/blob/master/src/mame/misc/globalvr.cpp) | Intel Pentium 3 Socket 370? |? | Intel 8265G/PE/P \ Intel 82875P GMCH | Intel 82801EB | nVidia Geforce 256 (NV10) _at very least_ | C-Media 3D Audio CMI8738 AC'97 | Aladdin HASP USB or HASP PCMCIA |
 |[misc/matrix.cpp](https://github.com/mamedev/mame/blob/master/src/mame/misc/matrix.cpp) | Cyrix MediaGX GXm-266GP | GXM-530D | Media GXm | Cyrix GXm Cx5530  | Media GX VGA | ? | SMC FDC37C931 Super I/O |
-|[misc/neomania.cpp](https://github.com/mamedev/mame/blob/master/src/mame/misc/neomania.cpp) | _at least Pentium MMX_ | ? | ? | ? | _ATI mach 64-based_ | _Sound Blaster PCI-based_ | VGA/parallel port/sound passthru to JAMMA _NEO MANIA ADAPTER BOARD_ |
+|[misc/neomania.cpp](https://github.com/mamedev/mame/blob/master/src/mame/misc/neomania.cpp) | _at least Pentium MMX_ | _allegedly Soyo SY-6VZA_ | VIA VT82C691 Apollo Pro | VIA VT82C596 PIPC | ATI Rage IIC AGP subvendor XPERT 98 | Sound Blaster AudioPCI 128 _on-board?_ | VGA/parallel port/sound passthru to JAMMA _NEO MANIA ADAPTER BOARD_ |
 |[misc/odyssey.cpp](https://github.com/mamedev/mame/blob/master/src/mame/misc/odyssey.cpp) (Thor) | Pentium 1 Socket 7 | Intel Advanced/ATX "Thor" | Intel 82437FX/82438FX i430FX Triton I | 82371FB PIIX | _Unknown_ | _Unknown_ | National Semiconductor PC87306B Super I/O |
 |[misc/odyssey.cpp](https://github.com/mamedev/mame/blob/master/src/mame/misc/odyssey.cpp) (Tucson) | Pentium 1 or MMX Socket 7 | Intel TC430HX "Tucson" | Intel 82439HX Triton II | Intel i82371SB PIIX3 | S3 Vision 968 on-board | ? | National Semiconductor PC87306B Super I/O |
 |[misc/playcenter.cpp](https://github.com/mamedev/mame/blob/master/src/mame/misc/playcenter.cpp) (Epox) | Pentium 1 or MMX Socket 7 or AMD K6 | EPoX EP-MV4F | VIA Apollo MVP4 | VIA VT82C686A | Trident Blade3D/MVP4 AGP on-board | SoundBlaster Pro with AC'97 on-board | _unknown PCI Ethernet_ \ Elo Touch CTR-231000 touch screen |
@@ -69,8 +69,8 @@
 |[pinball/newcanasta.cpp](https://github.com/mamedev/mame/blob/master/src/mame/pinball/newcanasta.cpp) | Intel LGA 775 Pentium 4 \ Pentium D \ Core 2 Duo | AsRock Conroe 1333-d677 Pressler P4FSB1333-650  | Intel 945GC A2 | Intel ICH7 | Intel Graphics Media Accelerator 950 on-board, _otherwise unused_ | Realtek ALC888 on-board audio codec | Realtek PCI-E 8101E LAN \ HD 8CH I/O \ Access I/O USB-DIO-96 |
 |[recfranco/rfslotspcpent.cpp](https://github.com/mamedev/mame/blob/master/src/mame/recfranco/rfslotspcpent.cpp) | Celeron 575 Socket 478 | Advantech AIMB-256 | Intel GME965 | Intel ICH8-M | _integrated Graphics?_ | Realtek ALC888 | Realtek RTL8111B \ W83627DHG Super I/O |
 |[sega/lindbergh.cpp](https://github.com/mamedev/mame/blob/master/src/mame/sega/lindbergh.cpp) (Red) | Intel Celeron D 335 SL8HM 2.8GHz | _custom_ | Intel JG82875 | Intel 6300ESB | GeForce 7600 GS (G73) | VIA VT1616 AC'97 codec on-board | Intel Gigabit 82541PI \ Sega JVS |
-|[success/skopro.cpp](https://github.com/mamedev/mame/blob/master/src/mame/success/skopro.cpp) | Intel Pentium E2160 | Biostar MG31-M7 TE | ? | ? | nVidia GeForce 8400GS | _integrated?_ | EGIS2JVS |
 |[sega/lindbergh.cpp](https://github.com/mamedev/mame/blob/master/src/mame/sega/lindbergh.cpp) (Yellow) | Intel Pentium 4 SL8JZ 3GHz | _custom_ | Intel JG82875 | Intel 6300ESB | GeForce 7600 GS (G73) | VIA VT1616 AC'97 codec on-board | Intel Gigabit 82541PI \ Sega JVS |
+|[success/skopro.cpp](https://github.com/mamedev/mame/blob/master/src/mame/success/skopro.cpp) | Intel Pentium E2160 | Biostar MG31-M7 TE | ? | ? | nVidia GeForce 8400GS | _integrated?_ | EGIS2JVS |
 |[taito/taitotx.cpp](https://github.com/mamedev/mame/blob/master/src/mame/taito/taitotx.cpp) (Type X) | ? | _custom Springdale spinoff_ | Intel 865G | | | | |
 |[taito/taitotx.cpp](https://github.com/mamedev/mame/blob/master/src/mame/taito/taitotx.cpp) (Type X+) | ? | _custom Springdale spinoff_ | Intel 865G | | | | |
 |[taito/taitotx.cpp](https://github.com/mamedev/mame/blob/master/src/mame/taito/taitotx.cpp) (Type X7) | ? | ? | Intel 855GME | Intel ICH4 | | | |
