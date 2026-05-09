@@ -1,9 +1,9 @@
 {
-	"scripts": {
-		"md:lint": "markdownlint . -c md_config.json"
-	},
-	"dependencies": {
-		"markdownlint": "^0.29.0",
-		"markdownlint-cli": "^0.35.0"
-	}
+    "scripts": {
+        "md:lint": "markdownlint . -c md_config.json -i node_modules/"
+    },
+    "dependencies": {
+        "markdownlint": "^0.40.0",
+        "markdownlint-cli": "^0.48.0"
+    }
 }

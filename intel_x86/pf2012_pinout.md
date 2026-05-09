@@ -6,7 +6,7 @@
 | GND | B | 2 | GND |
 | +5V | C | 3 | +5V |
 | +5V | D | 4 | +5V |
-| -5V (N.C.) | E | 5 | -5V (N.C.)
+| -5V (N.C.) | E | 5 | -5V (N.C.)|
 | +12V | F | 6 | +12V |
 | JAMMA KEY | H | 7 | JAMMA KEY |
 | Coin counter 2 | J | 8 | Coin counter 1 |

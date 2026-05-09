@@ -2,11 +2,11 @@ name: Markdown linter runner
 
 on:
   push:
-    branches: [ main ]
+    branches: [main]
     paths:
       - "**/*.md"
   pull_request:
-    branches: [ main ]
+    branches: [main]
     paths:
       - "**/*.md"
 
@@ -16,13 +16,13 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-    - name: Checkout
-      uses: actions/checkout@v3
-    - name: Install PNPM
-      uses: pnpm/action-setup@v2
-      with:
-        version: latest
-    - name: Install dependencies
-      run: pnpm install --lockfile=false
-    - name: Run Markdownlint
-      run: pnpm md:lint
+      - name: Checkout
+        uses: actions/checkout@v4
+      - name: Install Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: "22.x"
+      - name: Install dependencies
+        run: npm ci
+      - name: Run Markdownlint
+        run: npm run md:lint

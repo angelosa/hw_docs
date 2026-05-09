@@ -298,7 +298,7 @@ Game observations:
 | romset ID | irq_mask `$e90010` | frc control/freq `$e90014` / `$e90016` | irq notes |
 | --- | --- | --- | --- |
 | boomzoo | 0x80 | _frc not set_ ||
-| formduel | 0xc8   | 0xa000 0xffff | _irq 3 `rte`_ ||
+| formduel | 0xc8   | 0xa000 0xffff | _irq 3 `rte`_ |
 | gamblord | 0x00 -> 0xc0 -> 0xfe | 0xa20f 0x0xxx (normally 0x000a) ||
 | jttlaugh | 0xc0 |_frc not set_ |_irq 3 `rte`, irq 4 populated with a jmp `$[ff]c036.w` -> `dc.w`_ |
 | magipool | 0x00 -> 0xd8         | 0xa201 0x0104 ||

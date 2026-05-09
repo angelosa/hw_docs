@@ -8,7 +8,7 @@
 |PC-9801-04|Universal board|DIY PCB board|
 |PC-9801-05|ODA interface board|N5200 specific, printer connection|
 |PC-9801-06|GP-IB (IEEE-488) Interface Board||
-|PC-9801-07|SASI board|
+|PC-9801-07|SASI board||
 |PC-9801-08|5-inch floppy disk interface board| Connect 640KB floppy to PC-9801 (vanilla?) |
 |PC-9801-09|5-inch floppy disk interface board| Connect 640KB floppy to V30-based HW (as in dip mode too?)|
 |PC-9801-10/-11|Kanji ROM board|-10 is a requirement by PC9801E for mounting -18, -10 or -11 by vanilla PC9801|
