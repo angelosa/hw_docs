@@ -5,6 +5,7 @@
 | name | short description | additional notes |
 |------|-------------------|------------------|
 |PC-9801-01|lv1 Kanji ROM board||
+|PC-9801-03|CMT board|for 1st gen PC-98|
 |PC-9801-04|Universal board|DIY PCB board|
 |PC-9801-05|ODA interface board|N5200 specific, printer connection|
 |PC-9801-06|GP-IB (IEEE-488) Interface Board||
@@ -14,7 +15,7 @@
 |PC-9801-10/-11|Kanji ROM board|-10 is a requirement by PC9801E for mounting -18, -10 or -11 by vanilla PC9801|
 |PC-9801-11|Kanji ROM board|Can be mounted by vanilla PC9801 for -18|
 |PC-9001-12|Kanji lv2 ROM board||
-|PC-9801-13|CMT interface board||
+|PC-9801-13|CMT interface board|for V30 PC-98|
 |PC-9801-14|Music generator board|Runs on TMS3631-R1104, reportedly also mounted on Siel 6/DK600 synth board|
 |PC-9801-15|8-inch standard floppy disk interface board||
 |PC-9801-16|68k board|For Plan-9 compatibility|
@@ -29,7 +30,7 @@
 |PC-9801-28|Extended kanji ROM chip|For VM class|
 |PC-9801-29N|GP-IB (IEEE-488) Interface Board||
 |PC-9801-32|V60 CPU board|For UX class|
-|PC-9801-36|CMT interface board||
+|PC-9801-36|Cartridge magnetic tape||
 |PC-9801-37|Fax board||
 |PC-9801-38L|Multi-font ROM board||
 |PC-9801-51|Expansion RAM board|1MB RAM|
