@@ -29,4 +29,4 @@
 
 ## References
 
-- https://www.arcade-museum.com/manuals-videogames/W/Wink-Midcoin-Manual.pdf
+- [Midcoin Manual](https://www.arcade-museum.com/manuals-videogames/W/Wink-Midcoin-Manual.pdf)
