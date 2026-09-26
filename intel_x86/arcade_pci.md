@@ -1,6 +1,6 @@
 # List of Arcade games using PCI
 
-- Last update 27th March 2026
+- Last update 26th September 2026
 
 - MAME driver refers to the current filename as found from [MAME drivers directory](https://github.com/mamedev/mame/tree/master/src/mame)
 
@@ -11,6 +11,7 @@
 |[atari/mediagx.cpp](https://github.com/mamedev/mame/blob/master/src/mame/atari/mediagx.cpp) | Cyrix MediaGX SoC | ECS P5GX-LG | Cyrix MediaGX | Cyrix CX5510Rev2 | MediaGX VGA | Analog Devices AD1847JP ||
 |[cave/cavepc.cpp](https://github.com/mamedev/mame/blob/master/src/mame/cave/cavepc.cpp) | AMD Athlon 64 X2 5050e | Gigabyte GA-MA78GPM-UD2H _apparently_ | ? | ? | ATI Radeon HD 3200 | Realtek ALC1200 | Cave JVS "CV2000XP" |
 |[cave/fstgfish.cpp](https://github.com/mamedev/mame/blob/master/src/mame/cave/fstgfish.cpp) | Intel Core 2 Duo, FSB 333/266/200 MHz | Gigabyte GA-G31M-S2L | Intel 82G31 GMCH | Intel 82801GB ICH7 | _unknown, probably just uses integrated Intel GMA 3100_ | Realtek ALC662 | Cave JVS "CV1000XP" \ IT8718 Super I/O \ eGalax Touchscreen USB Controller |
+|[eolith/eoforce.cpp](https://github.com/mamedev/mame/blob/master/src/mame/eolith/eoforce.cpp) | Slot-1 Pentium 2 | _custom, with an ARM side for JAMMA and sound duties_ | VIA VT82C694T Apollo Pro 133T | VIA VT82C686B | nVidia GeForce2 MX/MX 400 (NV11) _on-board_ | ESS Maestro-3 ES1980S \ ES1921S AC'97 2.1 codec | Realtek RTL8139C Ethernet |
 |[funworld/photoply.cpp](https://github.com/mamedev/mame/blob/master/src/mame/funworld/photoply.cpp) | I486DX4 | Lucky Star LS-486EF REV:B | SiS85C496 | SiS85C497 | Cirrus Logic CL-GD5446 | AudioDrive ES1868F ISA | Winbond W83877AF Super I/O |
 |[funworld/photoplys.cpp](https://github.com/mamedev/mame/blob/master/src/mame/funworld/photoplys.cpp) | Intel Celeron FV524RX366 | ? | ? | Intel FW82801AA ICH \ Intel N82802AB FWH \ ITE IT8888F | ? | C-Media CMI8738 | Realtek RTL8139C Ethernet \ Parallel Port dongle \ Winbond W83977 + W83627HF |
 |[funworld/photoplysx.cpp](https://github.com/mamedev/mame/blob/master/src/mame/funworld/photoplysx.cpp) | Intel Celeron SL6VR 2 GHz | I865G-based, Pm49FL004T-33JC | Intel 865G | Intel FW82801FR | Intel 865G + Extreme Graphics 2? | C-Media CMI9761A | Winbond W83627HF Super I/O \ Realtek RTL8101L Ethernet \ GNT FNW USB Token |
@@ -57,6 +58,7 @@
 |[pc/conliner.cpp](https://github.com/mamedev/mame/blob/master/src/mame/pc/conliner.cpp) | Athlon AXDA1800DLT3C Socket A | Gigabyte GA-7VKMP Rev 3.4 | VIA VT8375 KM266 | VIA VT8235 | ATI Rage 128 Pro | Realtek ALC650 _on-board_ | IT8705F LPC \ Realtek RTL8100BL \ Elo Touch touchscreen \ Logitech QuickCam |
 |[pc/dawg.cpp](https://github.com/mamedev/mame/blob/master/src/mame/pc/dawg.cpp) | AMD Geode AGX0533EEXF080 | _custom_ | ? | Geode CS5535 | _MediaGX based_ | ? | SMSC SI010N268-NE LPC \ TI DP83816 MacPhyter-II |
 |[pc/fruitpc.cpp](https://github.com/mamedev/mame/blob/master/src/mame/pc/fruitpc.cpp) | _custom ST STPCD0166BTC3 486 SoC_ | ? | | | _allegedly a C&T 2nd gen core_ | | |
+|[pc/gamesnet.cpp](https://github.com/mamedev/mame/blob/master/src/mame/pc/gamesnet.cpp) | Intel Pentium 3, Socket 370 | RadiSys Endura GL815E | Intel FW82815 Solano GMCH | Intel FW82801BA ICH2 | Intel GMCH, integrated AGP | _unknown, likely Intel integrated_ | Oxford Semiconductor multifunction OX16PCI954 \ Contemporary Controls PCI20X ARCnet card \ New Diamond SupraSST PCI v92 df Modem \ Intel DA82562ET "Kinnereth" ethernet \ National PC87366 Super I/O \ PC87200 for PCI-to-ISA bridge |
 |[pc/paokaipc.cpp](https://github.com/mamedev/mame/blob/master/src/mame/pc/paokaipc.cpp) | _Socket 7 based_ | FIC PT-2200 | Intel 82439HX TXC | Intel 82371SB PIIX3 | SiS315 AGP | SiS7019 | eGalax USB Touchscreen \ VT82C416 X-Bus Controller |
 |[pc/play4texash.cpp](https://github.com/mamedev/mame/blob/master/src/mame/pc/play4texash.cpp) | Intel Atom N270 SLB73 | Advantech DPX-E105 _embedded gaming alias for Innocore \ Advantech E105MB/B_ | ? | NH82801GBM ICH? | _integrated in the chipset?_ | _ICH-based_ | GL826/MX2AE12G12 USB 2.0 card reader \ Realtek RTL8111CP \ ITE IT8718F-S EC LPC \ couple of PIC based chips |
 |[pc/przone.cpp](https://github.com/mamedev/mame/blob/master/src/mame/pc/przone.cpp) | _Socket 7_ | MSI MS-5169 | ALi M1541 | ALi M1543C | S3 ViRGE | vibra16 | PS/2 Trackball \ custom ISA for NVRAM and coin chutes |
