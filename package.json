@@ -3,7 +3,7 @@
         "md:lint": "markdownlint . -c md_config.json -i node_modules/"
     },
     "dependencies": {
-        "markdownlint": "^0.40.0",
-        "markdownlint-cli": "^0.48.0"
+        "markdownlint": "^0.41.1",
+        "markdownlint-cli": "^0.49.1"
     }
 }
