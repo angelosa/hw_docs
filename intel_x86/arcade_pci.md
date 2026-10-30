@@ -1,6 +1,6 @@
 # List of Arcade games using PCI
 
-- Last update 26th September 2026
+- Last update 30th October 2026
 
 - MAME driver refers to the current filename as found from [MAME drivers directory](https://github.com/mamedev/mame/tree/master/src/mame)
 
@@ -63,7 +63,7 @@
 |[pc/play4texash.cpp](https://github.com/mamedev/mame/blob/master/src/mame/pc/play4texash.cpp) | Intel Atom N270 SLB73 | Advantech DPX-E105 _embedded gaming alias for Innocore \ Advantech E105MB/B_ | ? | NH82801GBM ICH? | _integrated in the chipset?_ | _ICH-based_ | GL826/MX2AE12G12 USB 2.0 card reader \ Realtek RTL8111CP \ ITE IT8718F-S EC LPC \ couple of PIC based chips |
 |[pc/przone.cpp](https://github.com/mamedev/mame/blob/master/src/mame/pc/przone.cpp) | _Socket 7_ | MSI MS-5169 | ALi M1541 | ALi M1543C | S3 ViRGE | vibra16 | PS/2 Trackball \ custom ISA for NVRAM and coin chutes |
 |[pc/quakeat.cpp](https://github.com/mamedev/mame/blob/master/src/mame/pc/quakeat.cpp) | Intel Pentium 2 Slot 1 | Quantum3D Heavy Metal HM233G | Intel 82443LX | Intel 82371AB PIIX4 | Cirrus Logic CL-GD5465 AGP _on-board_ \ Quantum3D Obsidian2 90-4440 a.k.a. 3dfx Voodoo 2 \ Quantum3D Ventana MGV-PCI a.k.a. 3dfx Voodoo Rush _for 2d_ | Yamaha OPL3-SA3 YMF715 _on-board_ | SMSC FDC37C677 Super I/O \ Quantum3D GCI-2 custom board COM1 |
-|[pc/queen.cpp](https://github.com/mamedev/mame/blob/master/src/mame/pc/queen.cpp) | VIA Eden Processor a.k.a. Intel Celeron Socket 370 533 MHz _unconfirmed_ | VIA EPIA5000EAG | ? _VIA Apollo VXPro_ | VIA VT8231 | ? | VIA EPIA Companion Chip VT1612A audio codec | VIA EPIA Companion Chip VT6103 Network |
+|[pc/queen.cpp](https://github.com/mamedev/mame/blob/master/src/mame/pc/queen.cpp) | VIA Eden Processor (EBGA368 socket) a.k.a. Pentium 3 equivalent + 3DNow | VIA EPIA 5000EAG | VIA VT8601A | VIA VT8231 | ? | VIA EPIA Companion Chip VT1612A audio codec | VIA EPIA Companion Chip VT6103 Network |
 |[pc/seawolfm.cpp](https://github.com/mamedev/mame/blob/master/src/mame/pc/seawolfm.cpp) | Intel Celeron SL9XN Socket T | Foxconn 45CMX-X | Intel 82945GC GMCH | Intel 82801GB ICH7 | Jaton Video-PX8400GS-EX a.k.a. NVIDIA GeForce 8400GS (G8x) | ? | Atmel 89C5131A |
 |[pc/sis630.cpp](https://github.com/mamedev/mame/blob/master/src/mame/pc/sis630.cpp) (GameCristal) | Intel Celeron Socket 370 | Kontron 786LCD/3.5 | SiS630 | SiS950LPC? | SiS630 AGP | SiS7018 AC'97 Audio | ITE 8705 Super I/O |
 |[pc/sshuffle.cpp](https://github.com/mamedev/mame/blob/master/src/mame/pc/sshuffle.cpp) | AMD Sempron SDX140HBK13GQ | Asus M2N68-AM PLUS | Nvidia MCP68S | | GeForce 7025 \ nForce 630a | Realtek ALC662 | ITE IT8712F Super I/O \ Realtek RTL8211C \ PIC18F4520 |
